@@ -1,0 +1,5 @@
+URL=https://ebay.com
+PREFIX=21.T17999
+USERNAME=mvalle
+FILEKEY=21.T11.17999_mvalle_300_privkey.bin 
+DESCRIPTION=my proteins

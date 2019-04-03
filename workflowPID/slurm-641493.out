@@ -1,0 +1,105 @@
+/users/gamarco/cwlEnv/bin/cwl-runner 1.0.20190228155703
+Resolved 'cwlResources/main.cwl' to 'file:///users/gamarco/workflowPID/cwlResources/main.cwl'
+[workflow ] start
+[workflow ] starting step firstBlast
+[step firstBlast] start
+[job firstBlast] /tmp/lBYpUx$ blastp \
+    -outfmt \
+    6 \
+    -db \
+    /tmp/tmp1SbdGm/stga4990418-a841-45eb-b53c-31c3e31a9fe9/campodea_augens_OGS_protein_v0.1.fa \
+    -query \
+    /tmp/tmp1SbdGm/stg1eda8ea2-aff7-4a50-81f2-44cf2c3eb1c1/deformed.fasta > /tmp/lBYpUx/800b553b9b68fc181a4db36e83cbe5c268c492d9
+[job firstBlast] Max memory used: 20MiB
+[job firstBlast] completed success
+[step firstBlast] completed success
+[workflow ] starting step analyze
+[step analyze] start
+[job analyze] /tmp/ANrXe_$ python \
+    /tmp/tmpwc651E/stg7997a819-bf73-4692-a3ce-519ed40b764b/besthits.py \
+    /tmp/tmpwc651E/stg79a0e81b-42b4-4f75-8052-2348519b8815/800b553b9b68fc181a4db36e83cbe5c268c492d9 > /tmp/ANrXe_/7f0b8b7908779c3be8a7b7ceb811356ef6c8d102
+Could not collect memory usage, job ended before monitoring began.
+[job analyze] completed success
+[step analyze] completed success
+[workflow ] starting step getseq
+[step getseq] start
+[job getseq] /tmp/e0slsg$ grep \
+    -w \
+    '-A 1' \
+    -f \
+    /tmp/tmp83Aehj/stg0f63db4d-3267-42fc-8e3a-ae38a6c556d6/7f0b8b7908779c3be8a7b7ceb811356ef6c8d102 \
+    /tmp/tmp83Aehj/stg25b1bd15-fa04-46eb-a971-9a8ec4738786/campodea_augens_OGS_protein_v0.1.fa > /tmp/e0slsg/f45f25073f9f9eeb2dae35cbbab4d3682f537433
+Could not collect memory usage, job ended before monitoring began.
+[job getseq] completed success
+[step getseq] completed success
+[workflow ] starting step finalBlast
+[step finalBlast] start
+[job finalBlast] /tmp/Chl0o6$ blastp \
+    -outfmt \
+    6 \
+    -db \
+    /tmp/tmphPDCUd/stg37e56ad5-ac3a-473c-aceb-e99b69682ae1/swissprot \
+    -query \
+    /tmp/tmphPDCUd/stg9c484e76-85d2-477e-8e29-14aed0c93172/f45f25073f9f9eeb2dae35cbbab4d3682f537433 > /tmp/Chl0o6/800b553b9b68fc181a4db36e83cbe5c268c492d9
+CFastaReader: Hyphens are invalid and will be ignored around line 3
+[job finalBlast] Max memory used: 25MiB
+[job finalBlast] completed success
+[step finalBlast] completed success
+[workflow ] starting step sort
+[step sort] start
+[job sort] /tmp/avInOV$ sort \
+    -k1,1 \
+    -k12,12nr \
+    -k11,11n \
+    /tmp/tmphfNQ4q/stg7bf99819-6e1a-4007-a5f1-579cb8eac29a/800b553b9b68fc181a4db36e83cbe5c268c492d9 > /tmp/avInOV/33de643c8ec48bbe006148eed5ce05b29a0dfaeb
+Could not collect memory usage, job ended before monitoring began.
+[job sort] completed success
+[step sort] completed success
+[workflow ] starting step finalsort
+[step finalsort] start
+[job finalsort] /tmp/Mk5wxE$ sort \
+    -u \
+    -k1,1 \
+    --merge \
+    /tmp/tmpbh14CH/stg6dd1f409-bd7a-4598-9df3-8335519541bf/33de643c8ec48bbe006148eed5ce05b29a0dfaeb > /tmp/Mk5wxE/eab6010d58d30a75840a969b351b6bb96a0abd78
+Could not collect memory usage, job ended before monitoring began.
+[job finalsort] completed success
+[step finalsort] completed success
+[workflow ] starting step write
+[step write] start
+[job write] /tmp/LvnZlM$ cat \
+    /tmp/tmpATWzmP/stg33293462-ca6b-49f9-9353-c475b399c5b0/eab6010d58d30a75840a969b351b6bb96a0abd78 > /tmp/LvnZlM/deformed.fasta.RESULT
+Could not collect memory usage, job ended before monitoring began.
+[job write] completed success
+[step write] completed success
+[workflow ] completed success
+{
+    "outFile": {
+        "checksum": "sha1$70ee0f140ca9535a0bc3256fd7a6151cdc385560", 
+        "basename": "deformed.fasta.RESULT", 
+        "location": "file:///users/gamarco/workflowPID/deformed.fasta.RESULT", 
+        "path": "/users/gamarco/workflowPID/deformed.fasta.RESULT", 
+        "class": "File", 
+        "size": 199
+    }
+}
+Final process status is success
+ 
+Batch Job Summary Report for Job "tmp_job" (641493) on dom
+-----------------------------------------------------------------------------------------------------
+             Submit            Eligible               Start                 End    Elapsed  Timelimit 
+------------------- ------------------- ------------------- ------------------- ---------- ---------- 
+2019-04-03T14:35:47 2019-04-03T14:35:47 2019-04-03T14:35:47 2019-04-03T14:36:18   00:00:31   01:00:00 
+-----------------------------------------------------------------------------------------------------
+Username    Account     Partition   NNodes   Energy
+----------  ----------  ----------  ------  --------------
+gamarco     csstaff     normal           1    3.62K joules
+ 
+This job did not utilize any GPUs
+ 
+----------------------------------------------------------
+Scratch File System        Files       Quota
+--------------------  ----------  ----------
+/scratch/snx1600tds            2     1000000
+/scratch/snx3000tds            2     1000000
+ 

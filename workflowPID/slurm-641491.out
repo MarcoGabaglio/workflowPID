@@ -1,0 +1,105 @@
+/users/gamarco/cwlEnv/bin/cwl-runner 1.0.20190228155703
+Resolved 'cwlResources/main.cwl' to 'file:///users/gamarco/workflowPID/cwlResources/main.cwl'
+[workflow ] start
+[workflow ] starting step firstBlast
+[step firstBlast] start
+[job firstBlast] /tmp/CjLNP2$ blastp \
+    -outfmt \
+    6 \
+    -db \
+    /tmp/tmpLZVPYl/stg814c0d30-1d16-4597-b1e5-365f0ec3d789/campodea_augens_OGS_protein_v0.1.fa \
+    -query \
+    /tmp/tmpLZVPYl/stg1f60a359-e359-42ef-b562-553b202b9ca2/abdominal-A.fasta > /tmp/CjLNP2/800b553b9b68fc181a4db36e83cbe5c268c492d9
+[job firstBlast] Max memory used: 20MiB
+[job firstBlast] completed success
+[step firstBlast] completed success
+[workflow ] starting step analyze
+[step analyze] start
+[job analyze] /tmp/oZHI9k$ python \
+    /tmp/tmpAvqGIX/stg168c099d-2878-4afc-a788-8184a0106cb5/besthits.py \
+    /tmp/tmpAvqGIX/stgb2f18199-c914-4250-82ae-807f973ac753/800b553b9b68fc181a4db36e83cbe5c268c492d9 > /tmp/oZHI9k/7f0b8b7908779c3be8a7b7ceb811356ef6c8d102
+Could not collect memory usage, job ended before monitoring began.
+[job analyze] completed success
+[step analyze] completed success
+[workflow ] starting step getseq
+[step getseq] start
+[job getseq] /tmp/KZ46mm$ grep \
+    -w \
+    '-A 1' \
+    -f \
+    /tmp/tmp_R_I_Z/stgefb3b00a-bbfe-4201-8ca8-939218665907/7f0b8b7908779c3be8a7b7ceb811356ef6c8d102 \
+    /tmp/tmp_R_I_Z/stgc133eddb-c2a7-40b8-af20-cad3e24459a1/campodea_augens_OGS_protein_v0.1.fa > /tmp/KZ46mm/f45f25073f9f9eeb2dae35cbbab4d3682f537433
+Could not collect memory usage, job ended before monitoring began.
+[job getseq] completed success
+[step getseq] completed success
+[workflow ] starting step finalBlast
+[step finalBlast] start
+[job finalBlast] /tmp/xV5yUR$ blastp \
+    -outfmt \
+    6 \
+    -db \
+    /tmp/tmpgo7grj/stg0aa8ed2f-71f5-4641-ab8e-5311d3bdc05b/swissprot \
+    -query \
+    /tmp/tmpgo7grj/stgcfe53d42-a860-4cbb-a664-4febaf2dfe27/f45f25073f9f9eeb2dae35cbbab4d3682f537433 > /tmp/xV5yUR/800b553b9b68fc181a4db36e83cbe5c268c492d9
+CFastaReader: Hyphens are invalid and will be ignored around line 3
+[job finalBlast] Max memory used: 27MiB
+[job finalBlast] completed success
+[step finalBlast] completed success
+[workflow ] starting step sort
+[step sort] start
+[job sort] /tmp/7eHaIP$ sort \
+    -k1,1 \
+    -k12,12nr \
+    -k11,11n \
+    /tmp/tmp4kCIyR/stga080f861-50e6-44b1-8788-c5331995fc7b/800b553b9b68fc181a4db36e83cbe5c268c492d9 > /tmp/7eHaIP/33de643c8ec48bbe006148eed5ce05b29a0dfaeb
+Could not collect memory usage, job ended before monitoring began.
+[job sort] completed success
+[step sort] completed success
+[workflow ] starting step finalsort
+[step finalsort] start
+[job finalsort] /tmp/7_rzEt$ sort \
+    -u \
+    -k1,1 \
+    --merge \
+    /tmp/tmpO5bbxa/stg933af08c-ba24-465e-a215-509c0f27247a/33de643c8ec48bbe006148eed5ce05b29a0dfaeb > /tmp/7_rzEt/eab6010d58d30a75840a969b351b6bb96a0abd78
+Could not collect memory usage, job ended before monitoring began.
+[job finalsort] completed success
+[step finalsort] completed success
+[workflow ] starting step write
+[step write] start
+[job write] /tmp/H5hK8D$ cat \
+    /tmp/tmpqe8hUO/stg15878b8e-4f57-4031-80b1-600f59a7354a/eab6010d58d30a75840a969b351b6bb96a0abd78 > /tmp/H5hK8D/abdominal-A.fasta.RESULT
+Could not collect memory usage, job ended before monitoring began.
+[job write] completed success
+[step write] completed success
+[workflow ] completed success
+{
+    "outFile": {
+        "checksum": "sha1$d0f3c35aff9a7976875c8e00929ecdc1e974a69a", 
+        "basename": "abdominal-A.fasta.RESULT", 
+        "location": "file:///users/gamarco/workflowPID/abdominal-A.fasta.RESULT", 
+        "path": "/users/gamarco/workflowPID/abdominal-A.fasta.RESULT", 
+        "class": "File", 
+        "size": 133
+    }
+}
+Final process status is success
+ 
+Batch Job Summary Report for Job "tmp_job" (641491) on dom
+-----------------------------------------------------------------------------------------------------
+             Submit            Eligible               Start                 End    Elapsed  Timelimit 
+------------------- ------------------- ------------------- ------------------- ---------- ---------- 
+2019-04-03T14:35:46 2019-04-03T14:35:46 2019-04-03T14:35:47 2019-04-03T14:36:14   00:00:27   01:00:00 
+-----------------------------------------------------------------------------------------------------
+Username    Account     Partition   NNodes   Energy
+----------  ----------  ----------  ------  --------------
+gamarco     csstaff     normal           1    3.01K joules
+ 
+This job did not utilize any GPUs
+ 
+----------------------------------------------------------
+Scratch File System        Files       Quota
+--------------------  ----------  ----------
+/scratch/snx1600tds            2     1000000
+/scratch/snx3000tds            2     1000000
+ 

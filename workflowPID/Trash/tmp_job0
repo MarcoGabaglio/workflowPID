@@ -1,0 +1,3 @@
+#!/bin/bash
+#SBATCH -C mc
+srun cwl-runner cwlResources/main.cwl cwlResources/deformed-job.yml

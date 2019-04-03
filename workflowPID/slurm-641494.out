@@ -1,0 +1,22 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   404    0    76  100   328   1727   7454 --:--:-- --:--:-- --:--:--  9181
+{"responseCode":1,"handle":"21.T17999/3a4a4e52-560d-11e9-a31d-000101000215"} 
+Batch Job Summary Report for Job "tmp_pid_job" (641494) on dom
+-----------------------------------------------------------------------------------------------------
+             Submit            Eligible               Start                 End    Elapsed  Timelimit 
+------------------- ------------------- ------------------- ------------------- ---------- ---------- 
+2019-04-03T14:35:47 2019-04-03T14:37:20 2019-04-03T14:37:20 2019-04-03T14:37:24   00:00:04   01:00:00 
+-----------------------------------------------------------------------------------------------------
+Username    Account     Partition   NNodes   Energy
+----------  ----------  ----------  ------  --------------
+gamarco     csstaff     normal           1      259 joules
+ 
+This job did not utilize any GPUs
+ 
+----------------------------------------------------------
+Scratch File System        Files       Quota
+--------------------  ----------  ----------
+/scratch/snx1600tds            2     1000000
+/scratch/snx3000tds            2     1000000
+ 
