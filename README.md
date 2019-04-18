@@ -20,24 +20,23 @@ In order to run a workflow using this module make sure to have the followng perm
 
 You should have a virtual environment set up with:
 * cwl-runner
-
-'''
+```
 $ virtualenv myVirtualEnv
 $ source myVirtualEnv/bin/activate
 $ pip install cwl-runner 
-'''
+```
 
 * openstack
-'''
+```
 $ pip install -U pip setuptools
 $ pip install -U python-openstackclient lxml oauthlib python-swiftclient python-heatclient
-'''
+```
 
 
 A pollux enabled environment (you will need a CSCS username and the corresponging kerberos password)
 
-'''
+```
 $ git clone https://github.com/eth-cscs/openstack
 $ source openstack/cli/pollux.env
-'''
+```
 
