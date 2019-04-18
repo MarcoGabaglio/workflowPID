@@ -67,7 +67,7 @@ USERNAME: mvalle
 FILEKEY_PATH: 21.T11.17999_mvalle_300_privkey.bin 
 DESCRIPTION: my new data
 ```
-**Do not remove or manually modify the create.json or createDEFAULT.json files**
+**Do not remove** or manually modify the **create.json** or **createDEFAULT.json** files
 
 ## RUN
 
@@ -76,3 +76,10 @@ Once you are all setup just type:
 ```
 python main.py
 ```
+
+## Results
+
+* Once your analysis is complete you should regain control of the shell and in you results folder you should find a text file called **suffixes.txt**.
+
+* You can now link your data using the https://handle01.cscs.ch:8000/21.T17999/suffix link which will redirect and download the data
+
