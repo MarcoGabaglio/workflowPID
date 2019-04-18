@@ -10,3 +10,10 @@ The module is composed of:
 * storeWriter.py (responsible for the deposit of data into the CSCS stortage and the creation of temporary url to download the data)
 * autoprocedure.py (responsible of the creation of a PID with the temporary ulr created by storeWriter)
 
+##Usage
+
+In order to run a workflow using this module make sure to have the followng permissions:
+* create objects into the CSCS storage
+* create PIDs into the CSCS domain
+
+
