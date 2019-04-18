@@ -55,13 +55,13 @@ OUTPUT_DIRECTORY_PATH=NUOVIRESULT
 
 ### configPID.yml 
 
-* Leave the URL field empty
+* Leave some uninformative string in the URL field
 * Add your user name
 * Add the path leading to your private key (the public one should be in the same directory)
 * Add an initial description of the data
 
 ```
-URL:
+URL: asdasd
 PREFIX: 21.T17999
 USERNAME: mvalle
 FILEKEY_PATH: 21.T11.17999_mvalle_300_privkey.bin 
