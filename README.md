@@ -33,7 +33,7 @@ $ pip install -U python-openstackclient lxml oauthlib python-swiftclient python-
 ```
 
 
-* A pollux enabled environment (you will need a CSCS username and the corresponging kerberos password)
+* A pollux enabled environment (you will need a CSCS username and the corresponding kerberos password)
 
 ```
 $ git clone https://github.com/eth-cscs/openstack
