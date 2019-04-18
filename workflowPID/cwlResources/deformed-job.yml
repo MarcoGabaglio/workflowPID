@@ -1,0 +1,16 @@
+database:
+    class: File
+    path: /users/gamarco/data/campoSeq/campodea_augens_OGS_protein_v0.1.fa
+
+randomDB:
+    class: File
+    path:  /users/gamarco/data/swissprot/swissprot
+
+
+queries:
+    class: File
+    path: /users/gamarco/data/deformed.fasta
+
+script1:
+    class: File
+    path: /users/gamarco/data/besthits.py

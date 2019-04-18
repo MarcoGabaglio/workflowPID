@@ -1,0 +1,1 @@
+[{"index": 1, "type": "URL", "data": {"value": "https://mycoolwebsite.com", "format": "string"}}, {"index": 10, "type": "Description", "data": {"value": "my new data", "format": "string"}}, {"index": 100, "type": "HS_ADMIN", "data": {"value": {"index": 300, "handle": "21.T17999/mvalle", "permissions": "011111110011"}, "format": "admin"}}]
