@@ -42,7 +42,7 @@ $ source openstack/cli/pollux.env
 
 ## Setup
 
-### configCWL.yml
+### configCWL.yml (SISTEMARE)
 
 * Specify the path leading to your cwl workflow
 * Specify the path leading to the job files (separated by commas)
@@ -53,7 +53,7 @@ JOBFILES_PATHS=cwlResources/abdominal-job.yml, cwlResources/deformed-job.yml
 OUTPUT_DIRECTORY_PATH=NUOVIRESULT
 ```
 
-### configPID.yml (SISTEMARE)
+### configPID.yml 
 
 * Leave the URL field empty
 * Add your user name
@@ -67,5 +67,12 @@ USERNAME: mvalle
 FILEKEY_PATH: 21.T11.17999_mvalle_300_privkey.bin 
 DESCRIPTION: my new data
 ```
+**Do not remove or manually modify the create.json or createDEFAULT.json files**
 
+## RUN
 
+Once you are all setup just type:
+
+```
+python main.py
+```
