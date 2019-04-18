@@ -33,10 +33,39 @@ $ pip install -U python-openstackclient lxml oauthlib python-swiftclient python-
 ```
 
 
-A pollux enabled environment (you will need a CSCS username and the corresponging kerberos password)
+* A pollux enabled environment (you will need a CSCS username and the corresponging kerberos password)
 
 ```
 $ git clone https://github.com/eth-cscs/openstack
 $ source openstack/cli/pollux.env
 ```
+
+## Setup
+
+### configCWL.yml
+
+* Specify the path leading to your cwl workflow
+* Specify the path leading to the job files (separated by commas)
+* Specify the path where you want to save your results temporarily
+```
+WORKFLOW_PATH=cwlResources/main.cwl
+JOBFILES_PATHS=cwlResources/abdominal-job.yml, cwlResources/deformed-job.yml
+OUTPUT_DIRECTORY_PATH=NUOVIRESULT
+```
+
+### configPID.yml (SISTEMARE)
+
+* Leave the URL field empty
+* Add your user name
+* Add the path leading to your private key (the public one should be in the same directory)
+* Add an initial description of the data
+
+```
+URL:
+PREFIX: 21.T17999
+USERNAME: mvalle
+FILEKEY_PATH: 21.T11.17999_mvalle_300_privkey.bin 
+DESCRIPTION: my new data
+```
+
 
