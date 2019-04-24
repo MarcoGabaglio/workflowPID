@@ -42,7 +42,9 @@ $ source openstack/cli/pollux.env
 
 ## Setup
 
-### configCWL.yml (SISTEMARE)
+If you do not manually create a configCWL.yml or the configPID.yml one you will be asked for the necessary information in an interactive windown and the files will be automatically created. 
+
+### configCWL.yml
 
 * Specify the path leading to your cwl workflow
 * Specify the path leading to the job files (separated by commas)
@@ -55,7 +57,7 @@ OUTPUT_DIRECTORY_PATH=NUOVIRESULT
 
 ### configPID.yml 
 
-* Leave some uninformative string in the URL field
+* Leave some uninformative of empty string in the URL field
 * Add your user name
 * Add the path leading to your private key (the public one should be in the same directory)
 * Add an initial description of the data
@@ -67,7 +69,7 @@ USERNAME: mvalle
 FILEKEY_PATH: 21.T11.17999_mvalle_300_privkey.bin 
 DESCRIPTION: my new data
 ```
-**Do not remove** or manually modify the **create.json** or **createDEFAULT.json** files
+
 
 ## RUN
 
